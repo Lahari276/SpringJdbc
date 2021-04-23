@@ -69,7 +69,8 @@ public class StudentDaoImpl implements StudentDao {
 	public List<Student> getAllStudents() {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * FROM STUDENT";
-		List<Student> students = jdbcTemplate.query(sql, new StudentRowMapper());
+		List<Student> students = jdbcTemplate.query(sql, new StudentResultSetExtractor());
+				// new StudentRowMapper());
 		return students;
 	}
 
