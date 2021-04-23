@@ -11,5 +11,6 @@ public interface StudentDao {
 	public void cleanUp();
 	 public void insert(ArrayList<Student> students);
 	 public List<Student> getAllStudents();
+	 Student findStudentById(int id);
 
 }

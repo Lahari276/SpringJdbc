@@ -6,6 +6,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Repository;
@@ -71,6 +72,13 @@ public class StudentDaoImpl implements StudentDao {
 		List<Student> students = jdbcTemplate.query(sql, new StudentRowMapper());
 		return students;
 	}
+
+	public Student findStudentById(int id) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM STUDENT WHERE id = ?";
+		Student student =	jdbcTemplate.queryForObject(sql,new BeanPropertyRowMapper<Student>(Student.class),id);
+		return student;	
+		}
 
 	
 	
