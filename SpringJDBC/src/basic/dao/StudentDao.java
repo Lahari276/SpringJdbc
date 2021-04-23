@@ -1,5 +1,6 @@
 package basic.dao;
 import java.util.ArrayList;
+import java.util.List;
 
 import basic.model.Student;
 
@@ -9,5 +10,6 @@ public interface StudentDao {
 	 int delRecordByNameSem(String studentName, int sem);
 	public void cleanUp();
 	 public void insert(ArrayList<Student> students);
+	 public List<Student> getAllStudents();
 
 }

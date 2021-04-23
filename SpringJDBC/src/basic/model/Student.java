@@ -2,7 +2,7 @@ package basic.model;
 public class Student {
 	int id;
 	String name;
-	int sem;
+	int semester;
 	int average;
 	
 	
@@ -11,8 +11,12 @@ public class Student {
 		super();
 		this.id = id;
 		this.name = name;
-		this.sem = sem;
+		this.semester = sem;
 		this.average = average;
+	}
+	
+	public Student() {
+		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;
@@ -27,10 +31,10 @@ public class Student {
 		this.name = name;
 	}
 	public int getSem() {
-		return sem;
+		return semester;
 	}
 	public void setSem(int sem) {
-		this.sem = sem;
+		this.semester = sem;
 	}
 	public int getAverage() {
 		return average;
@@ -39,6 +43,10 @@ public class Student {
 		this.average = average;
 	}
 	
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "\ntoStringcalled\t"+name+"\t"+semester+"\t"+average;
+	}
 
 }

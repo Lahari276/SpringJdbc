@@ -65,6 +65,13 @@ public class StudentDaoImpl implements StudentDao {
 		jdbcTemplate.batchUpdate(sql, sqlArgs);
 	}
 
+	public List<Student> getAllStudents() {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM STUDENT";
+		List<Student> students = jdbcTemplate.query(sql, new StudentRowMapper());
+		return students;
+	}
+
 	
 	
 }
